@@ -1,0 +1,14 @@
+[Unit]
+Description=Enviro+ MQTT Logger
+After=network.target
+
+[Service]
+ExecStart=/usr/bin/python3 /usr/src/enviroplus-mqtt/src/main.py -h x.x.x.x -p 1883 -U <user> -P <password> --interval 3 --delay 1 --prefix pirohome/entryhallenviroplus --client-id pirohome
+WorkingDirectory=/usr/src/enviroplus-mqtt
+StandardOutput=inherit
+StandardError=inherit
+Restart=always
+User=pi
+
+[Install]
+WantedBy=multi-user.target

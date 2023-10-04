@@ -1,0 +1,9 @@
+[Unit]
+Description=Piro Enviroplus Service
+After=multi-user.target
+[Service]
+Type=simple
+Restart=always
+ExecStart=/usr/bin/python3 /home/pi/apps/pirohome-enviroplus/pirohome/pirohome-enviroplus-lcd.py
+[Install]
+WantedBy=multi-user.target
